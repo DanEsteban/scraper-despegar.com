@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #e9e9e9;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* Estilo para el encabezado del producto */
+        .product-header {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para el precio */
+        .product-price {
+            font-size: 16px;
+            color: #007bff; /* Cambia el color a tu preferencia */
+        }
+
+        /* Estilo para el MOQ */
+        .product-moq {
+            font-size: 14px;
+            color: #28a745; /* Cambia el color a tu preferencia */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Productos y Precios</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <div class="product-header">
+                <strong>Nombre del Producto:</strong> {{ product.product_name }}
+            </div>
+            <div class="product-price">
+                <strong>Precio del Producto:</strong> {{ product.price_range }}
+            </div>
+            <div class="product-moq">
+                <strong>MOQ:</strong> {{ product.moq }}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
